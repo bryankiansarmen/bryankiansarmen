@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import svgr from 'vite-plugin-svgr'
 import viteCompression from 'vite-plugin-compression'
-import { imagetools } from 'vite-imagetools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,8 +17,7 @@ export default defineConfig({
     viteCompression({
       algorithm: 'gzip',
       ext: '.gz',
-    }),
-    imagetools()
+    })
   ],
   build: {
     target: 'esnext',

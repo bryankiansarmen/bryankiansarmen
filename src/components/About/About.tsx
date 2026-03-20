@@ -1,6 +1,6 @@
 import * as GlobalStyled from "../../global.style";
 import * as Styled from "./About.style";
-import { SiPostgresql, SiDocker, SiSpringboot, SiKotlin, SiKubernetes, SiAwslambda, SiCsharp, SiDotnet, SiJavascript, SiNodedotjs, SiMysql, SiKtor, SiMicrosoftsqlserver, SiElasticsearch, SiRedis, SiJenkins, SiGit, SiTypescript, SiMongodb } from "react-icons/si";
+import { SiPostgresql, SiDocker, SiSpringboot, SiKotlin, SiKubernetes, SiAwslambda, SiCsharp, SiDotnet, SiJavascript, SiNodedotjs, SiMysql, SiKtor, SiMicrosoftsqlserver, SiElasticsearch, SiRedis, SiJenkins, SiGit, SiMongodb } from "react-icons/si";
 import { FaJava, FaPython } from "react-icons/fa";
 import { motion } from "framer-motion";
 
