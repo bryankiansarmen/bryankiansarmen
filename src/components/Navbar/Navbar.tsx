@@ -7,23 +7,23 @@ const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#project" },
+  // { label: "Projects", href: "#project" },
   { label: "Contact", href: "#contact" }
 ];
 
 const menuVariants: Variants = {
   hidden: { opacity: 0, scale: 0.95 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     scale: 1,
-    transition: { 
-      duration: 0.3, 
+    transition: {
+      duration: 0.3,
       ease: "easeOut" as const,
       staggerChildren: 0.1,
       delayChildren: 0.1
     }
   },
-  exit: { 
+  exit: {
     opacity: 0,
     scale: 0.95,
     transition: { duration: 0.2, ease: "easeIn" as const }
@@ -72,15 +72,15 @@ const Navbar = () => {
         </Styled.DesktopNavList>
 
         {/* Mobile Hamburger Button */}
-        <Styled.MobileMenuButton 
-          onClick={toggleMenu} 
+        <Styled.MobileMenuButton
+          onClick={toggleMenu}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </Styled.MobileMenuButton>
-        
+
         {/* Mobile Menu Overlay */}
         <AnimatePresence>
           {isOpen && (
