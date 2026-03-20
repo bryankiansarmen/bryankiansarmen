@@ -1,22 +1,21 @@
 import * as Styled from "./Footer.style";
-import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
-import { BiLogoGmail } from "react-icons/bi";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
-    <Styled.Footer>
+    <Styled.Footer role="contentinfo">
       <Styled.SocialContainer>
-        <a href="#">
-          <FaSquareGithub />
+        <a href="https://github.com/bryankiansarmen" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+          <Github size={20} aria-hidden="true" />
         </a>
-        <a href="#">
-          <FaLinkedin />
+        <a href="https://www.linkedin.com/in/bryankiansarmen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+          <Linkedin size={20} aria-hidden="true" />
         </a>
-        <a href="#">
-          <BiLogoGmail />
+        <a href="mailto:sarmenbryankian@gmail.com" aria-label="Email Me">
+          <Mail size={20} aria-hidden="true" />
         </a>
       </Styled.SocialContainer>
-      <p>Copyright ©2024, All rights reserved.</p>
+      <p>Copyright &copy; {new Date().getFullYear()}, Bryan Kian Sarmen. All rights reserved.</p>
     </Styled.Footer>
   );
 };

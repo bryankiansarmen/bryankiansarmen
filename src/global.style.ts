@@ -2,44 +2,67 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 1200px;
-  margin: auto;
-  padding: 5rem 2rem;
-  margin-top: 7rem;
-`;
-
-export const Blur = styled.span`
-  position: absolute;
-  box-shadow: 0 0 1000px 50px #1d4ed8;
-  z-index: -100;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 `;
 
 export const Button = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem 2rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: transparent;
-  border: 2px solid #fff;
-  border-radius: 5px;
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  color: var(--color-bg);
+  background-color: var(--color-text-primary);
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: 600;
 
   &:hover {
-    background-color: #1e40af;
-    border-color: #1e40af;
+    background-color: var(--color-text-secondary);
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+    
+    &:hover {
+      background-color: var(--color-surface);
+      border-color: var(--color-text-secondary);
+    }
   }
 `;
 
-export const SectionHeader = styled.h1`
-  margin-bottom: 1rem;
-  color: #fff;
-  text-align: center;
-  font-size: 2.25rem;
+export const Section = styled.section`
+  padding: 8rem 0;
+  position: relative;
+`;
+
+export const SectionHeader = styled.h2`
+  margin-bottom: 3rem;
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
   font-weight: 600;
+  letter-spacing: -0.02em;
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--color-accent);
+    margin-top: 1rem;
+  }
 `;
 
 export const SectionContent = styled.div`
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 `;

@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# Bryan Kian Sarmen | Software Engineering Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, accessible, and conversion-focused professional portfolio built with React and Vite. Designed to showcase enterprise architecture experience and resilient backend expertise through a striking, modern frontend interface.
 
-Currently, two official plugins are available:
+## Technology Stack
+- **Framework:** React 18 + TypeScript + Vite
+- **Styling:** Styled Components (CSS-in-JS) with a custom CSS variable design token system
+- **Animations:** Framer Motion for scroll-linked reveals, staging, and micro-interactions
+- **Icons:** Lucide React & React Icons
+- **Forms:** Client-side form submissions via Web3Forms API
+- **Tooling:** Vite Compression (Brotli/Gzip), Terser Production Minification
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+- **Performance Architecture:** Implemented aggressive route-level code splitting (`React.lazy`), structural component caching (`React.memo`), and rigorous Rollup chunking for fast load times.
+- **Accessibility by Design (a11y):** Full WCAG 2.1 AA compliance utilizing semantic HTML landmarks, `aria-live` regions for form feedback, and universal keyboard focus visibility rules.
+- **Mobile-First Responsiveness:** Fluid layout seamlessly adapting from large enterprise monitors down to mobile devices, featuring a custom framer-animated hamburger menu overlay.
+- **"Refined Dark Craft":** A custom UI aesthetic built to communicate engineering rigor, reliability, and precision to technical recruiters and enterprise clients.
 
-## Expanding the ESLint configuration
+## Local Development
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+2. **Configure Environment Variables:**
+   Create a `.env` file in the root directory and add a Free Access Key from [Web3Forms](https://web3forms.com/) to enable the Contact Section:
+   ```env
+   # .env
+   VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
+   ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+## Production Build
+To generate a highly optimized bundle ready for Vercel, Netlify, or AWS static hosting:
+```bash
+npm run build
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This command leverages Vite and Rollup to produce highly compressed artifact chunks optimized for strict initial-load performance budgets.
