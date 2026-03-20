@@ -85,31 +85,3 @@ export const ActionGroup = styled(motion.div)`
   flex-wrap: wrap;
   margin-bottom: 4rem;
 `;
-
-export const TrustSignal = styled(motion.div)`
-  display: flex;
-  gap: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
-  width: 100%;
-
-  .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-
-    strong {
-      font-family: var(--font-heading);
-      font-size: var(--text-2xl);
-      color: var(--color-text-primary);
-      font-weight: 600;
-    }
-
-    span {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-  }
-`;
