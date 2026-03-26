@@ -5,6 +5,10 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 0 5%;
+
+  @media (max-width: 480px) {
+    padding: 0 1.25rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -75,7 +79,7 @@ export const SectionLabel = styled.div`
 
 export const SectionHeader = styled.h2`
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.75rem, 5vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;

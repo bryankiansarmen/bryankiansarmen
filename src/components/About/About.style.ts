@@ -31,6 +31,11 @@ export const PhotoPlaceholder = styled.div`
   position: relative;
   overflow: hidden;
 
+  @media (max-width: 768px) {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -87,6 +92,11 @@ export const StatsRow = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 2.5rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
 `;
 
 export const StatCard = styled.div`
@@ -126,6 +136,10 @@ export const SkillsCategoryGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
   margin-top: 3.5rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const SkillCategoryCard = styled(motion.div)`

@@ -59,12 +59,16 @@ export const HeroTag = styled(motion.div)`
 
 export const HeroTitle = styled(motion.h1)`
   font-family: var(--font-heading);
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-size: clamp(2.4rem, 8vw, 4.5rem);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
   color: var(--color-text-primary);
+
+  @media (max-width: 480px) {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
 `;
 
 export const HeroRole = styled(motion.div)`
@@ -123,6 +127,10 @@ export const CodeWindow = styled.div`
   width: 100%;
   max-width: 460px;
   box-shadow: 0 0 60px rgba(0, 212, 255, 0.05), 0 20px 60px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+  }
 `;
 
 export const CodeHeader = styled.div`
@@ -154,6 +162,16 @@ export const CodeBody = styled.div`
   font-size: 0.78rem;
   line-height: 2;
   color: var(--color-text-secondary);
+  overflow-x: auto;
+
+  /* Custom scrollbar for small code window */
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--navy-600);
+    border-radius: 2px;
+  }
 `;
 
 export const CodeLine = styled.div``;
