@@ -42,31 +42,76 @@ const Home = () => {
 
   return (
     <Styled.HeroSection id="home" aria-labelledby="hero-title">
-      <GlobalStyled.Container>
+      <Styled.HeroInner>
         <Styled.HeroContent
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
+          <Styled.HeroTag variants={itemVariants}>
+            Available for opportunities
+          </Styled.HeroTag>
 
           <Styled.HeroTitle id="hero-title" variants={itemVariants}>
-            I engineer resilient backend systems and dynamic <span>full-stack</span> applications.
+            Bryan Kian<br />Sarmen
           </Styled.HeroTitle>
 
+          <Styled.HeroRole variants={itemVariants}>
+            <span>Software Engineer</span>
+            <Styled.CursorBlink />
+          </Styled.HeroRole>
+
           <Styled.HeroDescription variants={itemVariants}>
-            I'm a Software Engineer with {experienceYears}+ years of experience modernizing enterprise platforms. I specialize in designing scalable APIs, automating complex data pipelines, and shipping production grade software that drives operational efficiency.
+            I build performant, scalable web applications from frontend to backend.
+            With {experienceYears}+ years of experience across enterprise and product teams, I
+            specialize in crafting modern, responsive interfaces backed by robust APIs
+            and reliable server-side architecture.
           </Styled.HeroDescription>
 
           <Styled.ActionGroup variants={itemVariants}>
             <GlobalStyled.Button as="a" href={resumePdf} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }} aria-label="Download Resume" download="SARMEN_Bryan_Kian_Resume.pdf">
-              Download Resume <ArrowRight size={18} style={{ marginLeft: "8px" }} aria-hidden="true" />
+              Download Resume <ArrowRight size={16} style={{ marginLeft: "8px" }} aria-hidden="true" />
             </GlobalStyled.Button>
             <GlobalStyled.Button as="a" href="#contact" className="secondary" style={{ textDecoration: 'none' }} aria-label="Get in touch with me">
-              <Mail size={18} style={{ marginRight: "8px" }} aria-hidden="true" /> Get in Touch
+              <Mail size={16} style={{ marginRight: "8px" }} aria-hidden="true" /> Get in Touch
             </GlobalStyled.Button>
           </Styled.ActionGroup>
         </Styled.HeroContent>
-      </GlobalStyled.Container>
+
+        <Styled.HeroVisual
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <Styled.CodeWindow>
+            <Styled.CodeHeader>
+              <Styled.Dot color="#ff5f57" />
+              <Styled.Dot color="#febc2e" />
+              <Styled.Dot color="#28c840" />
+              <Styled.CodeFilename>kian.config.ts</Styled.CodeFilename>
+            </Styled.CodeHeader>
+            <Styled.CodeBody>
+              <Styled.CodeLine><Styled.Ln>1</Styled.Ln><Styled.Kw>const</Styled.Kw> <Styled.Fn>engineer</Styled.Fn> <Styled.Punct>= {'{'}</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>2</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>name</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Str>"Bryan Kian Sarmen"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>3</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>role</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Str>"Software Engineer"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>4</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>stack</Styled.Fn><Styled.Punct>: [</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>5</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"Java"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"Spring Boot"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>6</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"Node.js"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"PostgreSQL"</Styled.Str></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>7</Styled.Ln>&nbsp;&nbsp;<Styled.Punct>],</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>8</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>yearsXP</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>{experienceYears}</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>9</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>openToWork</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>true</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>10</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>passions</Styled.Fn><Styled.Punct>: [</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>11</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"clean code"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>12</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"system design"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>13</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"developer tools"</Styled.Str></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>14</Styled.Ln>&nbsp;&nbsp;<Styled.Punct>]</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>15</Styled.Ln><Styled.Punct>{'}'};</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>16</Styled.Ln></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>17</Styled.Ln><Styled.Cm>// ready to ship great things</Styled.Cm></Styled.CodeLine>
+            </Styled.CodeBody>
+          </Styled.CodeWindow>
+        </Styled.HeroVisual>
+      </Styled.HeroInner>
     </Styled.HeroSection>
   );
 };

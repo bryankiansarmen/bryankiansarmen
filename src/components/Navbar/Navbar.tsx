@@ -4,11 +4,9 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, Variants } from "framer-motion";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  // { label: "Projects", href: "#project" },
-  { label: "Contact", href: "#contact" }
+  { label: "About", href: "#about", num: "01" },
+  { label: "Experience", href: "#experience", num: "02" },
+  { label: "Contact", href: "#contact", num: "03" }
 ];
 
 const menuVariants: Variants = {
@@ -58,7 +56,7 @@ const Navbar = () => {
       <Styled.Nav aria-label="Main Navigation">
         <Styled.NavBrand>
           <a href="#home" aria-label="Kian - Home" onClick={closeMenu}>
-            <span>Kian</span>.dev
+            <span>BK</span>.
           </a>
         </Styled.NavBrand>
 
@@ -66,10 +64,12 @@ const Navbar = () => {
         <Styled.DesktopNavList>
           {NAV_LINKS.map(link => (
             <Styled.NavItem key={link.label}>
-              <a href={link.href}>{link.label}</a>
+              <a href={link.href} data-num={link.num}>{link.label}</a>
             </Styled.NavItem>
           ))}
         </Styled.DesktopNavList>
+
+        <Styled.NavCta href="#contact">Get in touch</Styled.NavCta>
 
         {/* Mobile Hamburger Button */}
         <Styled.MobileMenuButton
@@ -97,6 +97,9 @@ const Navbar = () => {
                     <a href={link.href} onClick={closeMenu}>{link.label}</a>
                   </Styled.MobileNavItem>
                 ))}
+                <Styled.MobileNavItem variants={itemVariants}>
+                  <a href="#contact" onClick={closeMenu} className="cta">Get in touch</a>
+                </Styled.MobileNavItem>
               </Styled.MobileNavList>
             </Styled.MobileNavOverlay>
           )}

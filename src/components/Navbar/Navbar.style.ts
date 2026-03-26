@@ -4,20 +4,21 @@ import { motion } from "framer-motion";
 export const FixedNav = styled.header`
   position: fixed;
   top: 0;
-  width: 100%;
-  background-color: rgba(10, 10, 15, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-surface);
+  left: 0;
+  right: 0;
   z-index: 1000;
+  background: rgba(3, 11, 24, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
   transition: all 0.3s ease;
 `;
 
 export const Nav = styled.nav`
-  max-width: 1200px;
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  padding: 1.25rem 1.5rem;
+  padding: 1.2rem 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,15 +30,24 @@ export const NavBrand = styled.div`
     align-items: center;
     text-decoration: none;
     font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: var(--text-xl);
-    letter-spacing: -0.02em;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
     color: var(--color-text-primary);
-    
+
     span {
-      color: var(--color-accent);
-      margin-right: 0.25rem;
+      color: var(--color-text-primary);
     }
+
+    /* The dot is electric */
+    &::after {
+      content: none;
+    }
+  }
+
+  /* Color the dot character */
+  a span + * {
+    color: var(--electric);
   }
 `;
 
@@ -56,32 +66,48 @@ export const DesktopNavList = styled.ul`
 
 export const NavItem = styled.li`
   a {
-    font-family: var(--font-body);
-    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
     color: var(--color-text-secondary);
+    text-decoration: none;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 500;
+    transition: color 0.2s;
     position: relative;
-    padding: 0.5rem 0;
 
-    &::after {
-      content: "";
-      position: absolute;
-      height: 2px;
-      width: 0;
-      bottom: 0;
-      left: 0;
-      background-color: var(--color-accent);
-      transition: width 0.3s ease;
+    &::before {
+      content: attr(data-num);
+      color: var(--electric);
+      font-size: 0.65rem;
+      margin-right: 0.4em;
+      opacity: 0.7;
     }
 
-    &:hover, &[aria-current="page"] {
+    &:hover {
       color: var(--color-text-primary);
-      &::after {
-        width: 100%;
-      }
     }
+  }
+`;
+
+export const NavCta = styled.a`
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--electric);
+  border: 1px solid var(--electric);
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: var(--electric);
+    color: var(--navy-950);
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -112,7 +138,7 @@ export const MobileNavOverlay = styled(motion.div)`
     right: 0;
     bottom: 0;
     height: 100vh;
-    background-color: var(--color-bg);
+    background-color: var(--navy-950);
     z-index: 999;
     flex-direction: column;
     justify-content: center;
@@ -139,7 +165,16 @@ export const MobileNavItem = styled(motion.li)`
     font-weight: 600;
     
     &:hover, &:active {
-      color: var(--color-accent);
+      color: var(--electric);
+    }
+
+    &.cta {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--electric);
+      border: 1px solid var(--electric);
+      padding: 0.75rem 1.5rem;
+      border-radius: 2px;
     }
   }
 `;

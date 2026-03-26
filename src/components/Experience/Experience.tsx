@@ -45,42 +45,46 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <GlobalStyled.Section id="experience" aria-labelledby="experience-heading">
+    <GlobalStyled.Section id="experience" aria-labelledby="experience-heading" style={{ borderTop: '1px solid rgba(59, 145, 245, 0.12)' }}>
       <GlobalStyled.Container>
-        <GlobalStyled.SectionHeader id="experience-heading">Experience</GlobalStyled.SectionHeader>
+        <Styled.HeaderBlock
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <GlobalStyled.SectionLabel>Career</GlobalStyled.SectionLabel>
+          <GlobalStyled.SectionHeader id="experience-heading">Where I've worked.</GlobalStyled.SectionHeader>
+        </Styled.HeaderBlock>
 
-        <Styled.ExperienceGrid>
+        <Styled.Timeline>
           {experiences.map((exp, index) => (
-            <Styled.ExperienceCard
+            <Styled.TimelineItem
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Styled.Header>
-                <Styled.Role>{exp.role}</Styled.Role>
-                <Styled.DateSpan>{exp.date}</Styled.DateSpan>
-              </Styled.Header>
-
-              <Styled.CompanyInfo>
-                {exp.company} &middot; {exp.location}
-              </Styled.CompanyInfo>
-
-              <Styled.TechList>
+              <Styled.TimelineDot />
+              <Styled.ExpPeriod>{exp.date}</Styled.ExpPeriod>
+              <Styled.ExpRole>{exp.role}</Styled.ExpRole>
+              <Styled.ExpCompany>{exp.company} · {exp.location}</Styled.ExpCompany>
+              <Styled.ExpDesc>
+                <ul>
+                  {exp.achievements.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </Styled.ExpDesc>
+              <Styled.ExpTags>
                 {exp.technologies.map(tech => (
-                  <Styled.TechBadge key={tech}>{tech}</Styled.TechBadge>
+                  <Styled.TechTag key={tech}>{tech}</Styled.TechTag>
                 ))}
-              </Styled.TechList>
-
-              <Styled.AchievementList>
-                {exp.achievements.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </Styled.AchievementList>
-            </Styled.ExperienceCard>
+              </Styled.ExpTags>
+            </Styled.TimelineItem>
           ))}
-        </Styled.ExperienceGrid>
+        </Styled.Timeline>
 
         <Styled.EducationSection
           initial={{ opacity: 0 }}

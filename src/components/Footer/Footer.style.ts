@@ -1,41 +1,31 @@
 import styled from "styled-components";
 
 export const Footer = styled.footer`
+  border-top: 1px solid var(--color-border);
+  padding: 2rem 5%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem 2rem;
-  color: var(--color-text-secondary);
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  text-align: center;
-  border-top: 1px solid var(--color-surface);
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
 `;
 
-export const SocialContainer = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+export const FooterText = styled.div`
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+`;
 
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-secondary);
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    padding: 0.75rem;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-
-    &:hover, &:focus-visible {
-      color: var(--color-bg);
-      background-color: var(--color-accent);
-      border-color: var(--color-accent);
-      transform: translateY(-2px);
-    }
-  }
+export const FooterCopy = styled.div`
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
 `;

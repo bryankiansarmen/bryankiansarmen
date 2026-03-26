@@ -4,27 +4,47 @@ import { SiPostgresql, SiDocker, SiSpringboot, SiKotlin, SiKubernetes, SiAwslamb
 import { FaJava, FaPython } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const skills = [
-  { icon: <FaJava />, name: "Java" },
-  { icon: <SiSpringboot />, name: "Spring Boot" },
-  { icon: <SiJavascript />, name: "Javascript" },
-  { icon: <SiNodedotjs />, name: "Node.js" },
-  { icon: <FaPython />, name: "Python" },
-  { icon: <SiKotlin />, name: "Kotlin" },
-  { icon: <SiKtor />, name: "Ktor" },
-  { icon: <SiCsharp />, name: "C#" },
-  { icon: <SiDotnet />, name: ".NET" },
-  { icon: <SiMongodb />, name: "MongoDB" },
-  { icon: <SiPostgresql />, name: "PostgreSQL" },
-  { icon: <SiMysql />, name: "MySQL" },
-  { icon: <SiMicrosoftsqlserver />, name: "Microsoft SQL Server" },
-  { icon: <SiDocker />, name: "Docker" },
-  { icon: <SiKubernetes />, name: "Kubernetes" },
-  { icon: <SiAwslambda />, name: "AWS" },
-  { icon: <SiElasticsearch />, name: "Elasticsearch" },
-  { icon: <SiRedis />, name: "Redis" },
-  { icon: <SiJenkins />, name: "Jenkins" },
-  { icon: <SiGit />, name: "Git" },
+const skillCategories = [
+  {
+    name: "Languages",
+    skills: [
+      { icon: <FaJava />, name: "Java" },
+      { icon: <SiKotlin />, name: "Kotlin" },
+      { icon: <SiCsharp />, name: "C#" },
+      { icon: <FaPython />, name: "Python" },
+      { icon: <SiJavascript />, name: "JavaScript" },
+    ]
+  },
+  {
+    name: "Frameworks",
+    skills: [
+      { icon: <SiSpringboot />, name: "Spring Boot" },
+      { icon: <SiKtor />, name: "Ktor" },
+      { icon: <SiDotnet />, name: ".NET" },
+      { icon: <SiNodedotjs />, name: "Node.js" },
+    ]
+  },
+  {
+    name: "Data & Cloud",
+    skills: [
+      { icon: <SiPostgresql />, name: "PostgreSQL" },
+      { icon: <SiMysql />, name: "MySQL" },
+      { icon: <SiMicrosoftsqlserver />, name: "MSSQL" },
+      { icon: <SiMongodb />, name: "MongoDB" },
+      { icon: <SiElasticsearch />, name: "Elasticsearch" },
+      { icon: <SiRedis />, name: "Redis" },
+      { icon: <SiAwslambda />, name: "AWS" },
+    ]
+  },
+  {
+    name: "DevOps & Tools",
+    skills: [
+      { icon: <SiDocker />, name: "Docker" },
+      { icon: <SiKubernetes />, name: "Kubernetes" },
+      { icon: <SiJenkins />, name: "Jenkins" },
+      { icon: <SiGit />, name: "Git" },
+    ]
+  }
 ];
 
 const containerVariants = {
@@ -48,46 +68,85 @@ const About = () => {
   return (
     <GlobalStyled.Section id="about" aria-labelledby="about-heading">
       <GlobalStyled.Container>
-        <GlobalStyled.SectionHeader id="about-heading">Professional Summary</GlobalStyled.SectionHeader>
+        <Styled.AboutLayout as={motion.div} variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
 
-        <Styled.AboutGrid as={motion.div} variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
-          <Styled.SummarySection>
-            <Styled.SummaryBlock as={motion.article} variants={itemVariants}>
-              <p className="lead">
-                I am a results driven <strong>Software Engineer</strong> with strong expertise in architecting
-                and optimizing scalable backend systems, APIs, and data automation pipelines.
-                With a proven track record across global organizations including Cambridge University Press and Assessment, I specialize in translating complex business requirements into high performance, secure, and reliable technical solutions.
-              </p>
+          {/* Left: Photo placeholder */}
+          <Styled.ImageWrap as={motion.div} variants={itemVariants}>
+            <Styled.PhotoPlaceholder>
+              <Styled.PhotoInitials>BK</Styled.PhotoInitials>
+              <Styled.PhotoCorner />
+              <Styled.PhotoAccent />
+            </Styled.PhotoPlaceholder>
+          </Styled.ImageWrap>
 
-              <ul className="highlights">
-                <li>
-                  <strong>System Architecture & Reliability:</strong> Proficient in designing resilient microservices and applications using Java, Spring Boot, Node.js, and C#, minimizing downtime across environments.
-                </li>
-                <li>
-                  <strong>Data Integration & Automation:</strong> Engineered robust ETL pipelines, bidirectional API synchronizations, and SQL optimizations that reduced manual workloads by up to 90%.
-                </li>
-                <li>
-                  <strong>Modern Full-Stack Delivery:</strong> Adept at bridging the gap between powerful backends and modern, responsive frontends using React and TypeScript.
-                </li>
-                <li>
-                  <strong>Engineering Excellence:</strong> Passionate about code quality, CI/CD automation (Docker, Kubernetes, AWS), and leveraging AI tools like GitHub Copilot to accelerate development velocity.
-                </li>
-              </ul>
-            </Styled.SummaryBlock>
-          </Styled.SummarySection>
+          {/* Right: About text */}
+          <motion.div variants={itemVariants}>
+            <GlobalStyled.SectionLabel>About me</GlobalStyled.SectionLabel>
+            <GlobalStyled.SectionHeader id="about-heading">
+              Building web experiences with precision.
+            </GlobalStyled.SectionHeader>
 
-          <Styled.VisualSection variants={itemVariants}>
-            <Styled.DecorativeLine />
-            <Styled.SkillsGrid>
-              {skills.map((skill, i) => (
-                <div key={i} className="icon-wrapper" aria-label={skill.name}>
-                  {skill.icon}
-                  <span aria-hidden="true">{skill.name}</span>
-                </div>
-              ))}
-            </Styled.SkillsGrid>
-          </Styled.VisualSection>
-        </Styled.AboutGrid>
+            <Styled.AboutText>
+              I'm a <strong>Software Engineer</strong> who loves building modern web applications
+              that are fast, accessible, and a joy to use. With experience across global organizations
+              including Cambridge University Press and Assessment, I bridge the gap between polished
+              frontends and powerful backend systems to deliver end-to-end solutions.
+            </Styled.AboutText>
+
+            <Styled.AboutText>
+              When I'm not shipping features, I'm exploring new web technologies,
+              refining UI patterns, or experimenting with AI-powered developer tools.
+            </Styled.AboutText>
+
+            <Styled.StatsRow>
+              <Styled.StatCard>
+                <Styled.StatNumber>3+</Styled.StatNumber>
+                <Styled.StatLabel>Years exp.</Styled.StatLabel>
+              </Styled.StatCard>
+              <Styled.StatCard>
+                <Styled.StatNumber>20+</Styled.StatNumber>
+                <Styled.StatLabel>Technologies</Styled.StatLabel>
+              </Styled.StatCard>
+              <Styled.StatCard>
+                <Styled.StatNumber>3</Styled.StatNumber>
+                <Styled.StatLabel>Companies</Styled.StatLabel>
+              </Styled.StatCard>
+            </Styled.StatsRow>
+          </motion.div>
+
+        </Styled.AboutLayout>
+
+        {/* Skills Categories Section */}
+        <Styled.SkillsSection>
+          <motion.div variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <GlobalStyled.SectionLabel>Tech stack</GlobalStyled.SectionLabel>
+            <GlobalStyled.SectionHeader>Tools I work with.</GlobalStyled.SectionHeader>
+          </motion.div>
+
+          <Styled.SkillsCategoryGrid>
+            {skillCategories.map((category, i) => (
+              <Styled.SkillCategoryCard
+                key={category.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <Styled.SkillCatHeader>
+                  <Styled.SkillCatName>{category.name}</Styled.SkillCatName>
+                </Styled.SkillCatHeader>
+                <Styled.SkillTagList>
+                  {category.skills.map(skill => (
+                    <Styled.SkillTag key={skill.name}>
+                      {skill.icon}
+                      <span>{skill.name}</span>
+                    </Styled.SkillTag>
+                  ))}
+                </Styled.SkillTagList>
+              </Styled.SkillCategoryCard>
+            ))}
+          </Styled.SkillsCategoryGrid>
+        </Styled.SkillsSection>
 
       </GlobalStyled.Container>
     </GlobalStyled.Section>

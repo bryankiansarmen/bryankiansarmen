@@ -1,21 +1,11 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const ExperienceGrid = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-`;
+export const HeaderBlock = styled(motion.div)``;
 
-export const ExperienceCard = styled(motion.article)`
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: 2.5rem;
+export const Timeline = styled.div`
+  margin-top: 3.5rem;
   position: relative;
-  overflow: hidden;
 
   &::before {
     content: '';
@@ -23,81 +13,71 @@ export const ExperienceCard = styled(motion.article)`
     left: 0;
     top: 0;
     bottom: 0;
-    width: 4px;
-    background: var(--color-accent);
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover::before {
-    opacity: 1;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--electric), transparent);
   }
 `;
 
-export const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+export const TimelineItem = styled(motion.div)`
+  padding: 0 0 3rem 2.5rem;
+  position: relative;
 
-  @media (min-width: 600px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
+  &:last-child {
+    padding-bottom: 0;
   }
 `;
 
-export const Role = styled.h3`
-  font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  color: var(--color-text-primary);
-  font-weight: 600;
-  margin: 0;
+export const TimelineDot = styled.div`
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--electric);
+  box-shadow: 0 0 10px var(--electric-glow);
 `;
 
-export const DateSpan = styled.span`
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-accent);
-  letter-spacing: 0.05em;
+export const ExpPeriod = styled.div`
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--electric);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
 `;
 
-export const CompanyInfo = styled.div`
-  font-size: var(--text-base);
-  color: var(--color-text-secondary);
-  font-weight: 500;
+export const ExpRole = styled.div`
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+`;
+
+export const ExpCompany = styled.div`
+  font-size: 0.9rem;
+  color: var(--blue-300);
   margin-bottom: 1rem;
 `;
 
-export const TechList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-`;
+export const ExpDesc = styled.div`
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 580px;
+  margin-bottom: 1rem;
 
-export const TechBadge = styled.span`
-  background: rgba(194, 167, 125, 0.1);
-  color: var(--color-accent);
-  font-size: var(--text-xs);
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  font-weight: 500;
-`;
-
-export const AchievementList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
   li {
-    font-size: var(--text-base);
-    color: var(--color-text-secondary);
-    line-height: 1.6;
     position: relative;
     padding-left: 1.25rem;
 
@@ -105,30 +85,53 @@ export const AchievementList = styled.ul`
       content: '▹';
       position: absolute;
       left: 0;
-      color: var(--color-accent);
+      color: var(--electric);
     }
   }
 `;
 
+export const ExpTags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+`;
+
+export const TechTag = styled.span`
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--blue-200);
+  background: rgba(59, 145, 245, 0.1);
+  border: 1px solid rgba(59, 145, 245, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+`;
+
 export const EducationSection = styled(motion.div)`
   margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-border);
   text-align: center;
-  
+
   h3 {
     font-family: var(--font-heading);
     color: var(--color-text-primary);
-    font-size: var(--text-2xl);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 700;
     margin-bottom: 0.5rem;
   }
 
   p {
     color: var(--color-text-secondary);
+    font-size: 0.95rem;
     margin-bottom: 0.5rem;
   }
 
   .honors {
-    color: var(--color-accent);
+    color: var(--electric);
+    font-family: var(--font-mono);
     font-weight: 500;
-    font-size: var(--text-sm);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
   }
 `;
