@@ -1,31 +1,25 @@
 import * as GlobalStyled from "../../global.style";
 import Card from "../Card/Card";
+import { motion } from "framer-motion";
 
 const projectsData = [
   {
-    title: "E-Commerce Re-platform",
-    problem: "Legacy monolithic architecture causing severe performance bottlenecks during peak traffic.",
-    role: "Lead Frontend Engineer — Architected the React + Vite migration.",
-    outcome: "40% faster Time to Interactive; resulting in a 12% revenue increase.",
-    techStack: ["React", "Vite", "Zustand", "Framer Motion"],
-    githubLink: "https://github.com",
-    demoLink: "https://demo.com"
+    title: "Quick Reserve",
+    problem: "A two-sided marketplace where space owners list bookable venues and renters search, book, and pay for time slots without double-booking or relying on client-side payment state.",
+    role: "Full-Stack Engineer owned the booking flow, multi-tenant authorization, and payment workflow.",
+    outcome: "Atomic, database-locked booking flow; 500+ tests including a concurrent double-booking race test; zero TypeScript errors.",
+    techStack: ["Next.js 16", "TypeScript", "React 19", "Tailwind CSS v4", "Supabase", "PostgreSQL", "Stripe", "Node.js", "Express", "Resend"],
+    githubLink: "https://github.com/bryankiansarmen/quick-reserve-web",
+    demoLink: "https://quick-reserve-psi.vercel.app"
   },
   {
-    title: "Financial Dashboard Analytics",
-    problem: "Data visualization components were lagging when processing thousands of data points.",
-    role: "Frontend Developer — Refactored charting libraries and implemented heavy memoization.",
-    outcome: "Reduced render times by 60%, unlocking real-time data streaming.",
-    techStack: ["React", "TypeScript", "D3.js", "WebSockets"],
-    githubLink: "https://github.com"
-  },
-  {
-    title: "SaaS Design System",
-    problem: "Inconsistent UI patterns across 4 different engineering teams.",
-    role: "Design Technologist — Built a comprehensive component library from scratch.",
-    outcome: "Adopted by 50+ engineers, cutting frontend development time by 30%.",
-    techStack: ["React", "Styled Components", "Storybook", "Figma"],
-    demoLink: "https://demo.com"
+    title: "DocuQuery",
+    problem: "Users upload PDFs and ask natural-language questions grounded in their content requiring fast, accurate retrieval across large document sets.",
+    role: "Full-Stack Engineer built the async FastAPI backend, hybrid search, caching, and React web client.",
+    outcome: "Hybrid SPLADE + BGE-M3 search with Reciprocal Rank Fusion; 80%+ enforced test coverage; containerized on Render.",
+    techStack: ["FastAPI", "Python", "Redis Streams", "Chroma Cloud", "Redis", "MongoDB", "PyMuPDF", "OpenRouter", "Docker", "Render", "React 19", "React Router v8", "TypeScript", "Tailwind CSS v4", "Vite"],
+    githubLink: "https://github.com/bryankiansarmen/docuquery-api",
+    demoLink: "https://docuquery-web.vercel.app"
   }
 ];
 
@@ -33,8 +27,20 @@ const Project = () => {
   return (
     <GlobalStyled.Section id="project" aria-labelledby="project-heading">
       <GlobalStyled.Container>
-        <GlobalStyled.SectionHeader id="project-heading">Projects</GlobalStyled.SectionHeader>
-        <GlobalStyled.SectionContent>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <GlobalStyled.SectionLabel>Selected work <span className="ref">04</span></GlobalStyled.SectionLabel>
+          <GlobalStyled.SectionHeader id="project-heading">Things I've built.</GlobalStyled.SectionHeader>
+          <GlobalStyled.SectionDesc>
+            Independent full-stack projects from marketplace platforms to
+            retrieval-augmented generation applications.
+          </GlobalStyled.SectionDesc>
+        </motion.div>
+        <GlobalStyled.SectionContent style={{ marginTop: '3.5rem' }}>
           {projectsData.map((project, index) => (
             <Card
               key={index}

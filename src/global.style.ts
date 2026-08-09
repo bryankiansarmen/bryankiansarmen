@@ -29,27 +29,9 @@ export const Button = styled.button`
   transition: background 0.2s, color 0.2s, opacity 0.2s;
   text-decoration: none;
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--paper-raised);
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-
-  span,
-  svg {
-    position: relative;
-    z-index: 1;
-  }
 
   &:hover {
-    &::before {
-      opacity: 1;
-    }
+    background: var(--paper-raised);
     color: var(--signal-bg);
   }
 
@@ -62,24 +44,15 @@ export const Button = styled.button`
     color: var(--ink);
     border-color: var(--hairline-strong);
 
-    &::before {
-      background: var(--signal-bg);
-    }
-
     &:hover {
+      background: var(--signal-bg);
       color: var(--signal-ink);
-      &::before {
-        opacity: 1;
-      }
     }
   }
 
   &:disabled {
     opacity: 0.45;
     cursor: not-allowed;
-    &::before {
-      opacity: 0;
-    }
   }
 `;
 

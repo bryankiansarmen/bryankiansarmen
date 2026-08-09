@@ -85,30 +85,15 @@ export const SubmitButton = styled.button`
   text-transform: uppercase;
   border-radius: 0;
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--paper-raised);
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
 
   &:hover {
-    &::before {
-      opacity: 1;
-    }
+    background: var(--paper-raised);
     color: var(--signal-bg);
   }
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    &::before {
-      opacity: 0;
-    }
   }
 `;
 

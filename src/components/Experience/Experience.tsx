@@ -4,16 +4,18 @@ import * as Styled from "./Experience.style";
 const experiences = [
   {
     role: "Software Engineer",
-    company: "Cambridge University Press and Assessment",
+    company: "Digital Services Cambridge Limited ROHQ",
     location: "Makati, Metro Manila",
     date: "Jan 2025 – Present",
-    technologies: ["Java", "Spring Boot", "Node.js", "Python", "AWS", "Kubernetes", "Elasticsearch", "Redis", "MySQL", "MongoDB"],
+    technologies: ["Java", "Spring Boot", "Apache Camel", "Node.js", "TypeScript", "Python", "AWS", "Elasticsearch", "Redis", "MySQL", "MongoDB", "Kubernetes", "Docker", "Jenkins", "GitLab CI/CD", "Playwright", "Grafana", "Sentry"],
     achievements: [
-      "Improved code quality and reduced post-deployment defects by implementing code reviews, integrating AI generated code evaluation from GitHub Copilot within the SDLC workflow.",
-      "Accelerated development velocity and reduced manual effort by developing Python automation scripts and reusable backend components.",
-      "Maintained high system reliability and minimized downtime by debugging and resolving production issues across test and live environments.",
-      "Strengthened application security and scalability by designing and developing backend services following clean engineering best practices.",
-      "Enhanced cross functional delivery by analyzing business requirements and translating them into actionable technical designs."
+      "Develop and maintain REST APIs and microservices using Java, Spring Boot, Apache Camel, and Node.js.",
+      "Optimize Elasticsearch indexing to prevent mapping explosion and improve system stability.",
+      "Improve API performance through autoscaling strategies and efficient resource utilization.",
+      "Design and maintain CI/CD pipelines and support AWS infrastructure in collaboration with Site Reliability Engineering teams.",
+      "Develop Python automation scripts and Playwright test automation to streamline engineering workflows.",
+      "Investigate and resolve production issues through proactive monitoring, root-cause analysis, and targeted fixes.",
+      "Use GitHub Copilot and AI-assisted development tools to improve development velocity and code quality."
     ]
   },
   {
@@ -21,12 +23,13 @@ const experiences = [
     company: "Marlow Navigation Philippines Inc.",
     location: "Malate, Metro Manila",
     date: "Apr 2023 – Jan 2025",
-    technologies: ["Kotlin", "C#", ".NET", "PostgreSQL", "MySQL", "Microsoft SQL Server"],
+    technologies: ["Kotlin", "Ktor", "C#", ".NET", "ASP.NET Core", "PostgreSQL", "MySQL", "Microsoft SQL Server"],
     achievements: [
-      "Reduced third-party data entry workload by 90% by integrating an external API with the internal database and automating bidirectional data synchronization.",
-      "Improved backend response times for high-traffic APIs by optimizing database queries and refining service architecture across production systems.",
-      "Increased operational efficiency and reduced human error by automating user privilege assignments through backend scripting.",
-      "Improved system reliability and maintainability by delivering well documented RESTful APIs supported by comprehensive unit testing."
+      "Developed and maintained REST APIs using Kotlin (Ktor), C#, and ASP.NET Core.",
+      "Reduced backend latency by optimizing database interactions and implementing connection pooling.",
+      "Resolved backend downtime caused by unoptimized garbage collection and out-of-memory conditions.",
+      "Developed automation scripts to streamline entitlement assignment and reduce manual workload.",
+      "Enhanced UI functionality and stability of Windows-based kiosk applications."
     ]
   },
   {
@@ -36,9 +39,10 @@ const experiences = [
     date: "Aug 2022 – Jan 2023",
     technologies: ["Microsoft SQL Server", "SSIS", "ETL"],
     achievements: [
-      "Improved data processing performance and reduced system load by developing and optimizing stored procedures.",
-      "Ensured data consistency and integrity across the data warehouse by designing ETL pipelines with automated validation rules.",
-      "Enabled data-driven decision-making by analyzing large datasets to identify actionable insights for cross-department optimization initiatives."
+      "Optimized stored procedures to improve data processing efficiency and reduce system load.",
+      "Designed and maintained ETL pipelines using SQL Server Integration Services.",
+      "Analyzed large datasets to generate actionable insights for business decisions.",
+      "Implemented data-validation rules to improve data integrity across ETL pipelines."
     ]
   }
 ];

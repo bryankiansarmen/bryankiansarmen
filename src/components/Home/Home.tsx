@@ -2,7 +2,7 @@ import { Variants } from "framer-motion";
 import * as Styled from "./Home.style";
 import * as GlobalStyled from "../../global.style";
 import { ArrowRight, Mail } from "lucide-react";
-import resumePdf from "../../assets/SARMEN, Bryan Kian (Resume).pdf";
+import resumePdf from "../../assets/resume.pdf";
 
 const Home = () => {
   const calculateExperience = () => {
@@ -63,14 +63,14 @@ const Home = () => {
           </Styled.HeroRole>
 
           <Styled.HeroDescription variants={itemVariants}>
-            I build performant, scalable web applications from frontend to backend.
-            With {experienceYears}+ years of experience across enterprise and product teams, I
-            specialize in crafting modern, responsive interfaces backed by robust APIs
-            and reliable server-side architecture.
+            I build performant, scalable web applications end to end from React and
+            Next.js interfaces to Spring Boot, Node.js, and FastAPI backends. With{" "}
+            {experienceYears}+ years across enterprise and product teams, I ship modern,
+            accessible frontends backed by robust APIs and reliable server-side architecture.
           </Styled.HeroDescription>
 
           <Styled.ActionGroup variants={itemVariants}>
-            <GlobalStyled.Button as="a" href={resumePdf} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }} aria-label="Download Resume" download="SARMEN_Bryan_Kian_Resume.pdf">
+            <GlobalStyled.Button as="a" href={resumePdf} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }} aria-label="Download Resume" download="resume.pdf">
               Download Resume <ArrowRight size={16} style={{ marginLeft: "8px" }} aria-hidden="true" />
             </GlobalStyled.Button>
             <GlobalStyled.Button as="a" href="#contact" className="secondary" style={{ textDecoration: 'none' }} aria-label="Get in touch with me">
@@ -99,15 +99,16 @@ const Home = () => {
               <Styled.CodeLine><Styled.Ln>3</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>"role"</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Str>"Software Engineer"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>4</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>"stack"</Styled.Fn><Styled.Punct>: [</Styled.Punct></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>5</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"Java"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"Spring Boot"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>6</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"Node.js"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"PostgreSQL"</Styled.Str></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>7</Styled.Ln>&nbsp;&nbsp;<Styled.Punct>],</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>8</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>yearsXP</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>{experienceYears}</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>9</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>openToWork</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>true</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>10</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>remote</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>true</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>11</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>base</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Str>"Manila, PH"</Styled.Str></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>12</Styled.Ln><Styled.Punct>{'}'};</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>13</Styled.Ln></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>14</Styled.Ln><Styled.Cm>// ready to ship great things</Styled.Cm></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>6</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"TypeScript"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"React"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>7</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"Node.js"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"Next.js"</Styled.Str></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>8</Styled.Ln>&nbsp;&nbsp;<Styled.Punct>],</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>9</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>yearsXP</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>{experienceYears}</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>10</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>openToWork</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>true</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>11</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>remote</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>true</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>12</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>base</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Str>"Bulacan, PH"</Styled.Str></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>13</Styled.Ln><Styled.Punct>{'}'};</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>14</Styled.Ln></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>15</Styled.Ln><Styled.Cm>// ready to ship great things</Styled.Cm></Styled.CodeLine>
             </Styled.CodeBody>
           </Styled.CodeWindow>
         </Styled.HeroVisual>

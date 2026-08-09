@@ -6,7 +6,8 @@ import { AnimatePresence, Variants } from "framer-motion";
 const NAV_LINKS = [
   { label: "About", href: "#about", num: "01" },
   { label: "Experience", href: "#experience", num: "02" },
-  { label: "Contact", href: "#contact", num: "03" }
+  { label: "Projects", href: "#project", num: "03" },
+  { label: "Contact", href: "#contact", num: "04" }
 ];
 
 const menuVariants: Variants = {

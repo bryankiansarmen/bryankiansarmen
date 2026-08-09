@@ -1,6 +1,7 @@
 import * as GlobalStyled from "../../global.style";
 import * as Styled from "./About.style";
-import { SiPostgresql, SiDocker, SiSpringboot, SiKotlin, SiKubernetes, SiAwslambda, SiCsharp, SiDotnet, SiJavascript, SiNodedotjs, SiMysql, SiKtor, SiMicrosoftsqlserver, SiElasticsearch, SiRedis, SiJenkins, SiGit, SiMongodb } from "react-icons/si";
+import bkPhoto from "../../assets/bk.jpg";
+import { SiPostgresql, SiDocker, SiSpringboot, SiKotlin, SiKubernetes, SiAwslambda, SiCsharp, SiDotnet, SiJavascript, SiNodedotjs, SiMysql, SiKtor, SiMicrosoftsqlserver, SiElasticsearch, SiRedis, SiJenkins, SiGit, SiMongodb, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiVite, SiExpress, SiFastapi, SiSupabase } from "react-icons/si";
 import { FaJava, FaPython } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -11,23 +12,36 @@ const skillCategories = [
       { icon: <FaJava />, name: "Java" },
       { icon: <SiKotlin />, name: "Kotlin" },
       { icon: <SiCsharp />, name: "C#" },
+      { icon: <SiTypescript />, name: "TypeScript" },
       { icon: <FaPython />, name: "Python" },
       { icon: <SiJavascript />, name: "JavaScript" },
     ]
   },
   {
-    name: "Frameworks",
+    name: "Frontend",
+    skills: [
+      { icon: <SiReact />, name: "React" },
+      { icon: <SiNextdotjs />, name: "Next.js" },
+      { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+      { icon: <SiVite />, name: "Vite" },
+    ]
+  },
+  {
+    name: "Backend & Frameworks",
     skills: [
       { icon: <SiSpringboot />, name: "Spring Boot" },
+      { icon: <SiNodedotjs />, name: "Node.js" },
+      { icon: <SiExpress />, name: "Express" },
+      { icon: <SiFastapi />, name: "FastAPI" },
       { icon: <SiKtor />, name: "Ktor" },
       { icon: <SiDotnet />, name: ".NET" },
-      { icon: <SiNodedotjs />, name: "Node.js" },
     ]
   },
   {
     name: "Data & Cloud",
     skills: [
       { icon: <SiPostgresql />, name: "PostgreSQL" },
+      { icon: <SiSupabase />, name: "Supabase" },
       { icon: <SiMysql />, name: "MySQL" },
       { icon: <SiMicrosoftsqlserver />, name: "MSSQL" },
       { icon: <SiMongodb />, name: "MongoDB" },
@@ -73,7 +87,7 @@ const About = () => {
           {/* Left: Photo placeholder */}
           <Styled.ImageWrap as={motion.div} variants={itemVariants}>
             <Styled.PhotoPlaceholder>
-              <Styled.PhotoInitials>BK</Styled.PhotoInitials>
+              <Styled.PhotoImg src={bkPhoto} alt="Bryan Kian Sarmen" />
               <Styled.PhotoCorner />
               <Styled.PhotoAccent />
             </Styled.PhotoPlaceholder>
@@ -87,24 +101,25 @@ const About = () => {
             </GlobalStyled.SectionHeader>
 
             <Styled.AboutText>
-              I'm a <strong>Software Engineer</strong> who loves building modern web applications
-              that are fast, accessible, and a joy to use. With experience across global organizations
-              including Cambridge University Press and Assessment, I bridge the gap between polished
-              frontends and powerful backend systems to deliver end-to-end solutions.
+              I'm a <strong>Software Engineer</strong> who builds fast, accessible, and reliable
+              web applications end to end. With experience across global organizations including
+              Cambridge University Press and Assessment, I bridge the gap between polished
+              frontends and powerful backend systems and ship full-stack products independently,
+              from database design and server-side APIs to responsive server-rendered interfaces.
             </Styled.AboutText>
 
             <Styled.AboutText>
-              When I'm not shipping features, I'm exploring new web technologies,
-              refining UI patterns, or experimenting with AI-powered developer tools.
+              When I'm not shipping features, I'm exploring new web technologies, refining UI patterns,
+              or experimenting with AI-assisted developer tools and retrieval-augmented applications.
             </Styled.AboutText>
 
             <Styled.StatsRow>
               <Styled.StatCard data-index="01">
-                <Styled.StatNumber>3+</Styled.StatNumber>
+                <Styled.StatNumber>4+</Styled.StatNumber>
                 <Styled.StatLabel>Years exp.</Styled.StatLabel>
               </Styled.StatCard>
               <Styled.StatCard data-index="02">
-                <Styled.StatNumber>20+</Styled.StatNumber>
+                <Styled.StatNumber>25+</Styled.StatNumber>
                 <Styled.StatLabel>Technologies</Styled.StatLabel>
               </Styled.StatCard>
               <Styled.StatCard data-index="03">

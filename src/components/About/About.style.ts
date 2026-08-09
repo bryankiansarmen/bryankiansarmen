@@ -46,13 +46,11 @@ export const PhotoPlaceholder = styled.div`
   }
 `;
 
-export const PhotoInitials = styled.div`
-  font-family: 'Syne', sans-serif;
-  font-size: 5rem;
-  font-weight: 800;
-  color: var(--ink);
-  opacity: 0.14;
-  letter-spacing: -0.04em;
+export const PhotoImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   position: relative;
   z-index: 1;
 `;
