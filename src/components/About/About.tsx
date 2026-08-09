@@ -81,7 +81,7 @@ const About = () => {
 
           {/* Right: About text */}
           <motion.div variants={itemVariants}>
-            <GlobalStyled.SectionLabel>About me</GlobalStyled.SectionLabel>
+            <GlobalStyled.SectionLabel>About me <span className="ref">01</span></GlobalStyled.SectionLabel>
             <GlobalStyled.SectionHeader id="about-heading">
               Building web experiences with precision.
             </GlobalStyled.SectionHeader>
@@ -99,15 +99,15 @@ const About = () => {
             </Styled.AboutText>
 
             <Styled.StatsRow>
-              <Styled.StatCard>
+              <Styled.StatCard data-index="01">
                 <Styled.StatNumber>3+</Styled.StatNumber>
                 <Styled.StatLabel>Years exp.</Styled.StatLabel>
               </Styled.StatCard>
-              <Styled.StatCard>
+              <Styled.StatCard data-index="02">
                 <Styled.StatNumber>20+</Styled.StatNumber>
                 <Styled.StatLabel>Technologies</Styled.StatLabel>
               </Styled.StatCard>
-              <Styled.StatCard>
+              <Styled.StatCard data-index="03">
                 <Styled.StatNumber>3</Styled.StatNumber>
                 <Styled.StatLabel>Companies</Styled.StatLabel>
               </Styled.StatCard>
@@ -119,7 +119,7 @@ const About = () => {
         {/* Skills Categories Section */}
         <Styled.SkillsSection>
           <motion.div variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <GlobalStyled.SectionLabel>Tech stack</GlobalStyled.SectionLabel>
+            <GlobalStyled.SectionLabel>Tech stack <span className="ref">02</span></GlobalStyled.SectionLabel>
             <GlobalStyled.SectionHeader>Tools I work with.</GlobalStyled.SectionHeader>
           </motion.div>
 
@@ -134,6 +134,7 @@ const About = () => {
               >
                 <Styled.SkillCatHeader>
                   <Styled.SkillCatName>{category.name}</Styled.SkillCatName>
+                  <Styled.SkillRef>[{String(i + 1).padStart(2, '0')}]</Styled.SkillRef>
                 </Styled.SkillCatHeader>
                 <Styled.SkillTagList>
                   {category.skills.map(skill => (

@@ -53,10 +53,11 @@ const Home = () => {
           </Styled.HeroTag>
 
           <Styled.HeroTitle id="hero-title" variants={itemVariants}>
-            Bryan Kian<br />Sarmen
+            Bryan<br />Kian<em className="accent">.</em><br />Sarmen
           </Styled.HeroTitle>
 
           <Styled.HeroRole variants={itemVariants}>
+            <span className="label">role_</span>
             <span>Software Engineer</span>
             <Styled.CursorBlink />
           </Styled.HeroRole>
@@ -85,29 +86,28 @@ const Home = () => {
         >
           <Styled.CodeWindow>
             <Styled.CodeHeader>
-              <Styled.Dot color="#ff5f57" />
-              <Styled.Dot color="#febc2e" />
-              <Styled.Dot color="#28c840" />
-              <Styled.CodeFilename>kian.config.ts</Styled.CodeFilename>
+              <span className="traffic">
+                <Styled.Dot color="#6a6a68" />
+                <Styled.Dot color="#9a9a94" />
+                <Styled.Dot color="#c8c8c2" />
+              </span>
+              <Styled.CodeFilename>bk.spec.json</Styled.CodeFilename>
             </Styled.CodeHeader>
             <Styled.CodeBody>
-              <Styled.CodeLine><Styled.Ln>1</Styled.Ln><Styled.Kw>const</Styled.Kw> <Styled.Fn>engineer</Styled.Fn> <Styled.Punct>= {'{'}</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>2</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>name</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Str>"Bryan Kian Sarmen"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>3</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>role</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Str>"Software Engineer"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>4</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>stack</Styled.Fn><Styled.Punct>: [</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>1</Styled.Ln><Styled.Punct>{'{'}</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>2</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>"spec"</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Str>"bryan-kian-sarmen"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>3</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>"role"</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Str>"Software Engineer"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>4</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>"stack"</Styled.Fn><Styled.Punct>: [</Styled.Punct></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>5</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"Java"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"Spring Boot"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>6</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"Node.js"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"PostgreSQL"</Styled.Str></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>7</Styled.Ln>&nbsp;&nbsp;<Styled.Punct>],</Styled.Punct></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>8</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>yearsXP</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>{experienceYears}</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>9</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>openToWork</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>true</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>10</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>passions</Styled.Fn><Styled.Punct>: [</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>11</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"clean code"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>12</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"system design"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>13</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"developer tools"</Styled.Str></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>14</Styled.Ln>&nbsp;&nbsp;<Styled.Punct>]</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>15</Styled.Ln><Styled.Punct>{'}'};</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>16</Styled.Ln></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>17</Styled.Ln><Styled.Cm>// ready to ship great things</Styled.Cm></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>10</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>remote</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>true</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>11</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>base</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Str>"Manila, PH"</Styled.Str></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>12</Styled.Ln><Styled.Punct>{'}'};</Styled.Punct></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>13</Styled.Ln></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>14</Styled.Ln><Styled.Cm>// ready to ship great things</Styled.Cm></Styled.CodeLine>
             </Styled.CodeBody>
           </Styled.CodeWindow>
         </Styled.HeroVisual>

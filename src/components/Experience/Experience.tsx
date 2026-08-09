@@ -53,7 +53,7 @@ const Experience = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <GlobalStyled.SectionLabel>Career</GlobalStyled.SectionLabel>
+          <GlobalStyled.SectionLabel>Career <span className="ref">03</span></GlobalStyled.SectionLabel>
           <GlobalStyled.SectionHeader id="experience-heading">Where I've worked.</GlobalStyled.SectionHeader>
         </Styled.HeaderBlock>
 
@@ -61,6 +61,7 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <Styled.TimelineItem
               key={index}
+              data-index={String(index + 1).padStart(2, '0')}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}

@@ -19,7 +19,7 @@ const App = () => {
       <Navbar />
       <main id="main-content">
         <Home />
-        <Suspense fallback={<div style={{ padding: '5rem', textAlign: 'center', color: 'var(--color-text-secondary)' }}>Loading...</div>}>
+        <Suspense fallback={<div style={{ padding: '5rem', textAlign: 'center', color: 'var(--ink-3)', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em' }}>LOADING_V1</div>}>
           <About />
           <Experience />
           {/* <Project /> */}

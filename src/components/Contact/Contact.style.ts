@@ -16,7 +16,7 @@ export const ContactInner = styled.div`
 export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 `;
 
 export const FormGroup = styled.div`
@@ -26,30 +26,36 @@ export const FormGroup = styled.div`
 `;
 
 export const FormLabel = styled.label`
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.1em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--ink-3);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+
+  &::before {
+    content: '» ';
+    color: var(--ink-4);
+  }
 `;
 
 const fieldStyles = `
-  background: var(--navy-800);
-  border: 1px solid var(--color-border);
-  border-radius: 3px;
+  background: var(--paper-raised);
+  border: 1px solid var(--hairline-strong);
   padding: 0.85rem 1rem;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--color-text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: var(--ink);
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  border-radius: 0;
 
   &::placeholder {
-    color: var(--color-text-muted);
+    color: var(--ink-4);
   }
 
   &:focus {
-    border-color: var(--blue-400);
+    border-color: var(--ink-2);
+    box-shadow: 0 0 0 3px var(--signal-glow);
   }
 `;
 
@@ -64,90 +70,127 @@ export const FormTextarea = styled.textarea`
 `;
 
 export const SubmitButton = styled.button`
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  background: var(--electric);
-  color: var(--navy-950);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  background: var(--signal-bg);
+  color: var(--signal-ink);
   padding: 0.85rem 2rem;
-  border: none;
-  border-radius: 2px;
-  font-weight: 500;
+  border: 1px solid var(--signal-bg);
+  font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
   width: 100%;
   text-align: center;
+  text-transform: uppercase;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--paper-raised);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
 
   &:hover {
-    opacity: 0.85;
-    transform: translateY(-1px);
+    &::before {
+      opacity: 1;
+    }
+    color: var(--signal-bg);
   }
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    transform: none;
+    &::before {
+      opacity: 0;
+    }
   }
 `;
 
 export const StatusMessage = styled.div<{ $variant: 'success' | 'error' }>`
   margin-top: 0.5rem;
   padding: 1rem;
-  border-radius: 4px;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  font-family: 'JetBrains Mono', monospace;
+  border-radius: 0;
+  border: 1px solid var(--hairline-strong);
 
   ${({ $variant }) => $variant === 'success' ? `
-    background-color: rgba(34, 197, 94, 0.1);
-    color: #4ade80;
-    border: 1px solid rgba(34, 197, 94, 0.2);
+    background: var(--signal-bg);
+    color: var(--signal-ink);
+    border-color: var(--signal-bg);
   ` : `
-    background-color: rgba(244, 67, 54, 0.1);
-    color: #f44336;
-    border: 1px solid rgba(244, 67, 54, 0.2);
+    background: var(--fill-soft);
+    color: var(--ink);
+    border-color: var(--ink-2);
   `}
 `;
 
-/* Contact Info Panel */
+/* Contact Info Panel — data sheet column */
 export const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.4rem;
+  padding: 2rem;
+  border: 1px solid var(--hairline-strong);
+  background: var(--fill-soft);
+
+  h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--ink-4);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+  }
 `;
 
 export const ContactItem = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px dashed var(--hairline);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
 `;
 
 export const ContactIconWrap = styled.div`
   width: 40px;
   height: 40px;
-  background: var(--electric-dim);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  border-radius: 4px;
+  background: var(--paper-raised);
+  border: 1px solid var(--hairline-strong);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
   flex-shrink: 0;
   margin-top: 2px;
+  color: var(--ink-3);
 `;
 
 export const ContactItemLabel = styled.div`
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--color-text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--ink-4);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.2rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.3rem;
 `;
 
 export const ContactItemValue = styled.span`
   font-size: 0.9rem;
-  color: var(--blue-200);
+  color: var(--ink);
   text-decoration: none;
+  font-weight: 500;
 `;
 
 export const SocialRow = styled.div`
@@ -158,17 +201,19 @@ export const SocialRow = styled.div`
 export const SocialLink = styled.a`
   width: 40px;
   height: 40px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
+  border: 1px solid var(--hairline-strong);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text-secondary);
+  color: var(--ink-3);
   text-decoration: none;
-  transition: border-color 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  border-radius: 0;
+  background: var(--paper-raised);
 
   &:hover {
-    border-color: var(--electric);
-    color: var(--electric);
+    border-color: var(--signal-bg);
+    color: var(--signal-bg);
+    background: var(--signal-glow);
   }
 `;

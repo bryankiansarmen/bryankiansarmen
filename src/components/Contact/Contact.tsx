@@ -55,7 +55,7 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <GlobalStyled.SectionLabel>Get in touch</GlobalStyled.SectionLabel>
+          <GlobalStyled.SectionLabel>Get in touch <span className="ref">04</span></GlobalStyled.SectionLabel>
           <GlobalStyled.SectionHeader id="contact-heading">Let's work together.</GlobalStyled.SectionHeader>
           <GlobalStyled.SectionDesc>
             I'm open to full-stack and backend roles, freelance projects, and interesting collaborations. Drop me a line.
@@ -142,6 +142,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
+            <h3>Direct lines</h3>
             <Styled.ContactItem>
               <div>
                 <Styled.ContactItemLabel>Email</Styled.ContactItemLabel>

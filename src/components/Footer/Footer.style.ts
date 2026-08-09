@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const Footer = styled.footer`
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--hairline-strong);
   padding: 2rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 1;
+  background: var(--paper);
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -17,15 +18,16 @@ export const Footer = styled.footer`
 `;
 
 export const FooterText = styled.div`
-  font-family: var(--font-mono);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 `;
 
 export const FooterCopy = styled.div`
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.04em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--ink-4);
+  letter-spacing: 0.06em;
 `;
