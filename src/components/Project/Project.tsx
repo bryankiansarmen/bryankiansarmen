@@ -4,20 +4,29 @@ import { motion } from "framer-motion";
 
 const projectsData = [
   {
+    title: "MiniBoard",
+    problem: "Eliminated UI latency and data synchronization friction in team collaboration by pairing instant optimistic client updates with reliable server-side Row-Level Security (RLS) enforcement and sub-second multi-user real-time state reconciliation.",
+    role: "Full-Stack Engineer architected a real-time collaborative Kanban application with multi-tenant workspaces, optimistic drag-and-drop boards, interactive card details, presence indicators, and activity logs.",
+    outcome: "Implemented fractional position updates with automated drift re-normalization for smooth drag-and-drop, WCAG 2.1 AA accessibility compliance, and 100+ unit, integration, and E2E tests.",
+    techStack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Supabase", "PostgreSQL", "Zustand", "@dnd-kit", "Playwright", "Vitest"],
+    githubLink: "https://github.com/bryankiansarmen/mini-board",
+    demoLink: "https://mini-board.vercel.app"
+  },
+  {
     title: "Quick Reserve",
-    problem: "A two-sided marketplace where space owners list bookable venues and renters search, book, and pay for time slots without double-booking or relying on client-side payment state.",
-    role: "Full-Stack Engineer owned the booking flow, multi-tenant authorization, and payment workflow.",
-    outcome: "Atomic, database-locked booking flow; 500+ tests including a concurrent double-booking race test; zero TypeScript errors.",
-    techStack: ["Next.js 16", "TypeScript", "React 19", "Tailwind CSS v4", "Supabase", "PostgreSQL", "Stripe", "Node.js", "Express", "Resend"],
+    problem: "Eliminated client-side payment vulnerability risks and double-booking race conditions by driving booking state transitions exclusively through server-verified webhook events and atomic database transactions.",
+    role: "Full-Stack Engineer designed and developed a full-stack, two-sided booking marketplace connecting venue owners with renters for hourly space reservations.",
+    outcome: "Delivered 100% server-validated booking state transitions, robust multi-tenant data isolation via Postgres RLS policies, and 290+ automated unit & integration tests.",
+    techStack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Supabase", "PostgreSQL", "Stripe API", "Node.js", "Express", "Resend"],
     githubLink: "https://github.com/bryankiansarmen/quick-reserve-web",
     demoLink: "https://quick-reserve-psi.vercel.app"
   },
   {
     title: "DocuQuery",
-    problem: "Users upload PDFs and ask natural-language questions grounded in their content requiring fast, accurate retrieval across large document sets.",
-    role: "Full-Stack Engineer built the async FastAPI backend, hybrid search, caching, and React web client.",
-    outcome: "Hybrid SPLADE + BGE-M3 search with Reciprocal Rank Fusion; 80%+ enforced test coverage; containerized on Render.",
-    techStack: ["FastAPI", "Python", "Redis Streams", "Chroma Cloud", "Redis", "MongoDB", "PyMuPDF", "OpenRouter", "Docker", "Render", "React 19", "React Router v8", "TypeScript", "Tailwind CSS v4", "Vite"],
+    problem: "Eliminated LLM response hallucinations and manual document scanning by providing precise document-grounded answers, asynchronous background ingestion for large files, and dual-layer caching.",
+    role: "Full-Stack Engineer built a Retrieval-Augmented Generation (RAG) platform with async FastAPI backend, Redis Streams worker, Chroma Cloud hybrid search, and React Router v8 SSR frontend.",
+    outcome: "Implemented hybrid search using RRF (dense + sparse embeddings), exact SHA-256 & semantic response caching, multi-turn context recovery, and end-to-end containerization with Docker deployed to Render.",
+    techStack: ["FastAPI", "Python", "Redis Streams", "Chroma Cloud", "Redis", "MongoDB", "PyMuPDF", "OpenRouter API", "Docker", "Render", "React 19", "React Router v8", "TypeScript", "Tailwind CSS v4"],
     githubLink: "https://github.com/bryankiansarmen/docuquery-api",
     demoLink: "https://docuquery-web.vercel.app"
   }
