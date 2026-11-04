@@ -1,8 +1,9 @@
 import * as GlobalStyled from "../../global.style";
 import * as Styled from "./About.style";
 import bkPhoto from "../../assets/bk.jpg";
-import { SiPostgresql, SiDocker, SiSpringboot, SiKotlin, SiKubernetes, SiAwslambda, SiCsharp, SiDotnet, SiJavascript, SiNodedotjs, SiMysql, SiKtor, SiMicrosoftsqlserver, SiElasticsearch, SiRedis, SiJenkins, SiGit, SiMongodb, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiVite, SiExpress, SiFastapi, SiSupabase } from "react-icons/si";
-import { FaJava, FaPython } from "react-icons/fa";
+import { SiPostgresql, SiDocker, SiSpringboot, SiKotlin, SiKubernetes, SiAmazonaws, SiCsharp, SiDotnet, SiJavascript, SiNodedotjs, SiMysql, SiKtor, SiMicrosoftsqlserver, SiElasticsearch, SiRedis, SiJenkins, SiGit, SiMongodb, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiVite, SiExpress, SiFastapi, SiSupabase, SiReactrouter, SiVercel, SiRender, SiGitlab, SiGithubactions, SiKeycloak, SiOpenid, SiDependabot, SiApachemaven, SiGradle, SiJunit5, SiVitest, SiPytest, SiPlaywright, SiPostman, SiGrafana, SiPrometheus, SiSentry, SiJira, SiConfluence, SiGithubcopilot, SiAnthropic } from "react-icons/si";
+import { FaJava, FaPython, FaDatabase } from "react-icons/fa";
+import { DatabaseZap, LineChart, Workflow, Plug, Shuffle, FlaskConical, Accessibility, Brain, Search, Merge, Cloud, Sparkles, RefreshCw, Users, Columns } from "lucide-react";
 import { motion } from "framer-motion";
 
 const skillCategories = [
@@ -10,11 +11,25 @@ const skillCategories = [
     name: "Languages",
     skills: [
       { icon: <FaJava />, name: "Java" },
+      { icon: <SiTypescript />, name: "TypeScript" },
+      { icon: <SiJavascript />, name: "JavaScript" },
+      { icon: <FaPython />, name: "Python" },
       { icon: <SiKotlin />, name: "Kotlin" },
       { icon: <SiCsharp />, name: "C#" },
-      { icon: <SiTypescript />, name: "TypeScript" },
-      { icon: <FaPython />, name: "Python" },
-      { icon: <SiJavascript />, name: "JavaScript" },
+      { icon: <FaDatabase />, name: "SQL" },
+    ]
+  },
+  {
+    name: "Backend",
+    skills: [
+      { icon: <SiSpringboot />, name: "Spring Boot" },
+      { icon: <Workflow />, name: "Apache Camel" },
+      { icon: <SiNodedotjs />, name: "Node.js" },
+      { icon: <SiExpress />, name: "Express" },
+      { icon: <SiFastapi />, name: "FastAPI" },
+      { icon: <SiKtor />, name: "Ktor" },
+      { icon: <SiDotnet />, name: ".NET" },
+      { icon: <SiDotnet />, name: "ASP.NET Core" },
     ]
   },
   {
@@ -22,41 +37,76 @@ const skillCategories = [
     skills: [
       { icon: <SiReact />, name: "React" },
       { icon: <SiNextdotjs />, name: "Next.js" },
-      { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+      { icon: <SiReactrouter />, name: "React Router" },
       { icon: <SiVite />, name: "Vite" },
-    ]
-  },
-  {
-    name: "Backend & Frameworks",
-    skills: [
-      { icon: <SiSpringboot />, name: "Spring Boot" },
-      { icon: <SiNodedotjs />, name: "Node.js" },
-      { icon: <SiExpress />, name: "Express" },
-      { icon: <SiFastapi />, name: "FastAPI" },
-      { icon: <SiKtor />, name: "Ktor" },
-      { icon: <SiDotnet />, name: ".NET" },
+      { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+      { icon: <LineChart />, name: "Recharts" },
     ]
   },
   {
     name: "Data & Cloud",
     skills: [
       { icon: <SiPostgresql />, name: "PostgreSQL" },
-      { icon: <SiSupabase />, name: "Supabase" },
       { icon: <SiMysql />, name: "MySQL" },
-      { icon: <SiMicrosoftsqlserver />, name: "MSSQL" },
       { icon: <SiMongodb />, name: "MongoDB" },
-      { icon: <SiElasticsearch />, name: "Elasticsearch" },
       { icon: <SiRedis />, name: "Redis" },
-      { icon: <SiAwslambda />, name: "AWS" },
+      { icon: <DatabaseZap />, name: "Valkey" },
+      { icon: <SiMicrosoftsqlserver />, name: "MSSQL" },
+      { icon: <SiElasticsearch />, name: "Elasticsearch" },
+      { icon: <SiSupabase />, name: "Supabase" },
+      { icon: <Plug />, name: "JDBC" },
+      { icon: <SiAmazonaws />, name: "AWS (EKS)" },
+      { icon: <SiKubernetes />, name: "Kubernetes" },
+      { icon: <SiDocker />, name: "Docker" },
+      { icon: <SiVercel />, name: "Vercel" },
+      { icon: <SiRender />, name: "Render" },
     ]
   },
   {
-    name: "DevOps & Tools",
+    name: "Security & DevOps",
     skills: [
-      { icon: <SiDocker />, name: "Docker" },
-      { icon: <SiKubernetes />, name: "Kubernetes" },
+      { icon: <SiKeycloak />, name: "Keycloak" },
+      { icon: <SiOpenid />, name: "OAuth / OIDC" },
+      { icon: <SiDependabot />, name: "Dependabot" },
+      { icon: <SiGitlab />, name: "GitLab CI/CD" },
+      { icon: <SiGithubactions />, name: "GitHub Actions" },
       { icon: <SiJenkins />, name: "Jenkins" },
+      { icon: <SiApachemaven />, name: "Maven" },
+      { icon: <SiGradle />, name: "Gradle" },
+    ]
+  },
+  {
+    name: "Testing & Observability",
+    skills: [
+      { icon: <SiJunit5 />, name: "JUnit" },
+      { icon: <FlaskConical />, name: "Mockito" },
+      { icon: <SiVitest />, name: "Vitest" },
+      { icon: <SiPytest />, name: "pytest" },
+      { icon: <SiPlaywright />, name: "Playwright" },
+      { icon: <SiPostman />, name: "Postman" },
+      { icon: <Shuffle />, name: "fast-check" },
+      { icon: <Accessibility />, name: "axe-core" },
+      { icon: <SiGrafana />, name: "Grafana" },
+      { icon: <SiPrometheus />, name: "Prometheus" },
+      { icon: <SiSentry />, name: "Sentry" },
+    ]
+  },
+  {
+    name: "AI, Tools & Methods",
+    skills: [
+      { icon: <Brain />, name: "RAG" },
+      { icon: <Search />, name: "Hybrid search" },
+      { icon: <Merge />, name: "RRF" },
+      { icon: <Cloud />, name: "Chroma Cloud" },
+      { icon: <Sparkles />, name: "OpenRouter" },
       { icon: <SiGit />, name: "Git" },
+      { icon: <SiJira />, name: "Jira" },
+      { icon: <SiConfluence />, name: "Confluence" },
+      { icon: <SiAnthropic />, name: "Claude Code" },
+      { icon: <SiGithubcopilot />, name: "GitHub Copilot" },
+      { icon: <RefreshCw />, name: "Agile" },
+      { icon: <Users />, name: "Scrum" },
+      { icon: <Columns />, name: "Kanban" },
     ]
   }
 ];
@@ -101,16 +151,18 @@ const About = () => {
             </GlobalStyled.SectionHeader>
 
             <Styled.AboutText>
-              I'm a <strong>Software Engineer</strong> who builds fast, accessible, and reliable
-              web applications end to end. With experience across global organizations including
-              Cambridge University Press and Assessment, I bridge the gap between polished
-              frontends and powerful backend systems and ship full-stack products independently,
-              from database design and server-side APIs to responsive server-rendered interfaces.
+              I'm a <strong>Software Engineer</strong> with 4+ years of experience building
+              Java/Spring Boot microservices and full-stack TypeScript applications. My work
+              centers on REST API design, AWS (EKS) infrastructure, Keycloak identity, CI/CD
+              automation, and production reliability, with hands-on delivery of secure
+              multi-tenant systems using Postgres RLS, Stripe webhooks, real-time sync, and
+              RAG pipelines.
             </Styled.AboutText>
 
             <Styled.AboutText>
-              When I'm not shipping features, I'm exploring new web technologies, refining UI patterns,
-              or experimenting with AI-assisted developer tools and retrieval-augmented applications.
+              When I'm not shipping features, I'm exploring AI-assisted developer tools,
+              refining UI patterns, or building retrieval-augmented applications and
+              forecasting tools.
             </Styled.AboutText>
 
             <Styled.StatsRow>
@@ -119,7 +171,7 @@ const About = () => {
                 <Styled.StatLabel>Years exp.</Styled.StatLabel>
               </Styled.StatCard>
               <Styled.StatCard data-index="02">
-                <Styled.StatNumber>25+</Styled.StatNumber>
+                <Styled.StatNumber>50+</Styled.StatNumber>
                 <Styled.StatLabel>Technologies</Styled.StatLabel>
               </Styled.StatCard>
               <Styled.StatCard data-index="03">

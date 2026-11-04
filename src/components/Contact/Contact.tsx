@@ -58,7 +58,7 @@ const Contact = () => {
           <GlobalStyled.SectionLabel>Get in touch <span className="ref">05</span></GlobalStyled.SectionLabel>
           <GlobalStyled.SectionHeader id="contact-heading">Let's work together.</GlobalStyled.SectionHeader>
           <GlobalStyled.SectionDesc>
-            I'm open to full-stack and backend roles, freelance projects, and interesting collaborations. Drop me a line.
+            I'm open to backend and full-stack roles, freelance projects, and interesting collaborations. Drop me a line.
           </GlobalStyled.SectionDesc>
         </motion.div>
 
@@ -148,6 +148,15 @@ const Contact = () => {
                 <Styled.ContactItemLabel>Email</Styled.ContactItemLabel>
                 <Styled.ContactItemValue as="a" href="mailto:sarmenbryankian@gmail.com">
                   sarmenbryankian@gmail.com
+                </Styled.ContactItemValue>
+              </div>
+            </Styled.ContactItem>
+
+            <Styled.ContactItem>
+              <div>
+                <Styled.ContactItemLabel>Phone</Styled.ContactItemLabel>
+                <Styled.ContactItemValue as="a" href="tel:+639940249061">
+                  +63 994 024 9061
                 </Styled.ContactItemValue>
               </div>
             </Styled.ContactItem>

@@ -1,8 +1,7 @@
 import { Variants } from "framer-motion";
 import * as Styled from "./Home.style";
 import * as GlobalStyled from "../../global.style";
-import { ArrowRight, Mail } from "lucide-react";
-import resumePdf from "../../assets/resume.pdf";
+import { Mail } from "lucide-react";
 
 const Home = () => {
   const calculateExperience = () => {
@@ -63,17 +62,15 @@ const Home = () => {
           </Styled.HeroRole>
 
           <Styled.HeroDescription variants={itemVariants}>
-            I build performant, scalable web applications end to end from React and
-            Next.js interfaces to Spring Boot, Node.js, and FastAPI backends. With{" "}
-            {experienceYears}+ years across enterprise and product teams, I ship modern,
-            accessible frontends backed by robust APIs and reliable server-side architecture.
+            I build Java/Spring Boot microservices and full-stack TypeScript applications,
+            with a focus on REST API design, AWS (EKS) infrastructure, Keycloak identity,
+            CI/CD automation, and production reliability. With {experienceYears}+ years
+            across enterprise and product teams, I ship secure multi-tenant systems backed
+            by Postgres RLS, Stripe webhooks, real-time sync, and RAG pipelines.
           </Styled.HeroDescription>
 
           <Styled.ActionGroup variants={itemVariants}>
-            <GlobalStyled.Button as="a" href={resumePdf} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }} aria-label="Download Resume" download="resume.pdf">
-              Download Resume <ArrowRight size={16} style={{ marginLeft: "8px" }} aria-hidden="true" />
-            </GlobalStyled.Button>
-            <GlobalStyled.Button as="a" href="#contact" className="secondary" style={{ textDecoration: 'none' }} aria-label="Get in touch with me">
+            <GlobalStyled.Button as="a" href="#contact" style={{ textDecoration: 'none' }} aria-label="Get in touch with me">
               <Mail size={16} style={{ marginRight: "8px" }} aria-hidden="true" /> Get in Touch
             </GlobalStyled.Button>
           </Styled.ActionGroup>
@@ -100,7 +97,7 @@ const Home = () => {
               <Styled.CodeLine><Styled.Ln>4</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>"stack"</Styled.Fn><Styled.Punct>: [</Styled.Punct></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>5</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"Java"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"Spring Boot"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>6</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"TypeScript"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"React"</Styled.Str><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
-              <Styled.CodeLine><Styled.Ln>7</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"Node.js"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"Next.js"</Styled.Str></Styled.CodeLine>
+              <Styled.CodeLine><Styled.Ln>7</Styled.Ln>&nbsp;&nbsp;&nbsp;&nbsp;<Styled.Str>"Node.js"</Styled.Str><Styled.Punct>,</Styled.Punct> <Styled.Str>"AWS (EKS)"</Styled.Str></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>8</Styled.Ln>&nbsp;&nbsp;<Styled.Punct>],</Styled.Punct></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>9</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>yearsXP</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>{experienceYears}</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>
               <Styled.CodeLine><Styled.Ln>10</Styled.Ln>&nbsp;&nbsp;<Styled.Fn>openToWork</Styled.Fn><Styled.Punct>:</Styled.Punct> <Styled.Val>true</Styled.Val><Styled.Punct>,</Styled.Punct></Styled.CodeLine>

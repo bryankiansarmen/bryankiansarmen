@@ -4,18 +4,19 @@ import * as Styled from "./Experience.style";
 const experiences = [
   {
     role: "Software Engineer",
-    company: "Digital Services Cambridge Limited ROHQ",
+    company: "Digital Services Cambridge Limited (ROHQ)",
     location: "Makati, Metro Manila",
     date: "Jan 2025 – Present",
-    technologies: ["Java", "Spring Boot", "Apache Camel", "Node.js", "TypeScript", "Python", "AWS", "Elasticsearch", "Redis", "MySQL", "MongoDB", "Kubernetes", "Docker", "Jenkins", "GitLab CI/CD", "Playwright", "Grafana", "Sentry"],
+    technologies: ["Java", "Spring Boot", "Apache Camel", "JavaScript", "Node.js", "Python", "TypeScript", "AWS (EKS)", "MongoDB", "MySQL", "Redis", "Valkey", "Elasticsearch", "Kubernetes", "Docker", "Keycloak", "Dependabot", "Jenkins", "Git", "GitLab CI/CD", "Maven", "GitHub Copilot", "Claude Code", "Playwright"],
     achievements: [
-      "Develop and maintain REST APIs and microservices using Java, Spring Boot, Apache Camel, and Node.js.",
-      "Optimize Elasticsearch indexing to prevent mapping explosion and improve system stability.",
-      "Improve API performance through autoscaling strategies and efficient resource utilization.",
-      "Design and maintain CI/CD pipelines and support AWS infrastructure in collaboration with Site Reliability Engineering teams.",
-      "Develop Python automation scripts and Playwright test automation to streamline engineering workflows.",
-      "Investigate and resolve production issues through proactive monitoring, root-cause analysis, and targeted fixes.",
-      "Use GitHub Copilot and AI-assisted development tools to improve development velocity and code quality."
+      "Design and maintain REST APIs and Apache Camel integration routes across Java/Spring Boot microservices.",
+      "Migrated containerized services to Amazon EKS and implemented autoscaling, improving scalability, reliability, and operational efficiency.",
+      "Implemented institution resolution in the Keycloak post-login flow and developed custom Service Provider Interfaces (SPIs) for identity authentication endpoints, unifying access-token claims across authentication contexts.",
+      "Migrated caching infrastructure to Valkey, preserving performance and scalability while improving compatibility.",
+      "Optimized Elasticsearch indexing and standardized product data fields and lookup mechanisms, improving search stability, data consistency, and maintainability.",
+      "Remediated Dependabot-identified vulnerabilities and modernized JDBC and AWS SDK dependencies, improving security, compatibility, and performance.",
+      "Design and maintain CI/CD pipelines and AWS infrastructure, and resolve production incidents using Grafana/Prometheus/Sentry.",
+      "Automate engineering and QA workflows with Python and Playwright, reducing manual effort across recurring tasks and regression testing."
     ]
   },
   {
@@ -23,13 +24,13 @@ const experiences = [
     company: "Marlow Navigation Philippines Inc.",
     location: "Malate, Metro Manila",
     date: "Apr 2023 – Jan 2025",
-    technologies: ["Kotlin", "Ktor", "C#", ".NET", "ASP.NET Core", "PostgreSQL", "MySQL", "Microsoft SQL Server"],
+    technologies: ["Kotlin", "Ktor", "C#", ".NET", "ASP.NET Core", "PostgreSQL", "MySQL", "Microsoft SQL Server", "Git", "Gradle"],
     achievements: [
       "Developed and maintained REST APIs using Kotlin (Ktor), C#, and ASP.NET Core.",
       "Reduced backend latency by optimizing database interactions and implementing connection pooling.",
-      "Resolved backend downtime caused by unoptimized garbage collection and out-of-memory conditions.",
+      "Diagnosed and resolved out-of-memory failures caused by inefficient object allocation and garbage collection, reducing backend downtime.",
       "Developed automation scripts to streamline entitlement assignment and reduce manual workload.",
-      "Enhanced UI functionality and stability of Windows-based kiosk applications."
+      "Contributed to Windows-based kiosk applications, improving UI functionality and stability."
     ]
   },
   {
@@ -37,12 +38,12 @@ const experiences = [
     company: "M Technologies Network and Data Solution",
     location: "Sta. Maria, Bulacan",
     date: "Aug 2022 – Jan 2023",
-    technologies: ["Microsoft SQL Server", "SSIS", "ETL"],
+    technologies: ["Microsoft SQL Server", "SQL Server Integration Services", "ETL Pipelines"],
     achievements: [
-      "Optimized stored procedures to improve data processing efficiency and reduce system load.",
-      "Designed and maintained ETL pipelines using SQL Server Integration Services.",
+      "Optimized SQL Server stored procedures, improving data processing efficiency and reducing system load.",
+      "Designed ETL pipelines using SSIS for consistent and reliable data integration.",
       "Analyzed large datasets to generate actionable insights for business decisions.",
-      "Implemented data-validation rules to improve data integrity across ETL pipelines."
+      "Implemented data validation rules to ensure integrity across data pipelines."
     ]
   }
 ];
